@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx/getxutilites/Secondscreen.dart';
 
-class Getxutilites extends StatefulWidget {
-  const Getxutilites({super.key});
+class Secondscreen extends StatefulWidget {
+  const Secondscreen({super.key});
 
   @override
-  State<Getxutilites> createState() => _GetxutilitesState();
+  State<Secondscreen> createState() => _SecondscreenState();
 }
 
-class _GetxutilitesState extends State<Getxutilites> {
+class _SecondscreenState extends State<Secondscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('GetX Utilites'),
+        title: Text(Get.arguments[1]),
       ),
       body: Column(
         children: [
@@ -49,9 +48,9 @@ class _GetxutilitesState extends State<Getxutilites> {
           ),
           ElevatedButton(
               onPressed: () {
-                Get.to(Secondscreen(), arguments: ['name', 'waqas']);
+                Get.back();
               },
-              child: const Text('Next Screen'))
+              child: const Text('Back'))
         ],
       ),
     );
